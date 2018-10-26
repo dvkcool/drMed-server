@@ -6,6 +6,7 @@ router.route("/").get(function (req, res) {
 })
 
 router.route("/log2").get(function (req, res) {
-  console.log("log2 called");
+  console.log("Request called:"+req);
+  res.send("Done");
 })
 module.exports = router;

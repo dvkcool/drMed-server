@@ -145,6 +145,7 @@ input[type=submit]:hover {
 				}
 				xhr.open('POST', url);
 				xhr.send(data);*/
+				console.log(JSON.stringify(data));
 				fetch("https://dr-med.herokuapp.com/givereward", {
 					  method: 'POST',
 					  body: JSON.stringify(data)

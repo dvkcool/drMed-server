@@ -59,9 +59,11 @@ request(selectOptions, function(error, response, body) {
     "fulfillmentText":"This is a sample response from your webhook!",
     "fulfillmentMessages": [
       {
-        "text": [
-            ""+resM
-          ]
+        "text": {
+          "text":  [
+              ""+resM
+            ]
+        }
       }
     ],
     "source": "https://dr-med.herokuapp.com/"

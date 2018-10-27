@@ -56,12 +56,13 @@ request(selectOptions, function(error, response, body) {
   var resy = JSON.parse(body);
   var resM = resy.data.symptom[0].remedies;
   var response = {
-    "fulfillmentText": "displayed&spoken response",
-    "fulfillmentMessages": [{
-      "text": [
-        resM
-      ]
-    }],
+    "fulfillmentMessages": [
+      {
+        "text": [
+            ""+resM
+          ]
+      }
+    ],
     "source": "https://dr-med.herokuapp.com/"
   }
   return res.json(response);
@@ -106,12 +107,13 @@ app.post('/getdisease',function(req,res){
     var resy = JSON.parse(body);
     var resM = resy.data.symptom[0].remedies;
     var response = {
-      "fulfillmentText": "displayed&spoken response",
-      "fulfillmentMessages": [{
-        "text": [
-          resM
-        ]
-      }],
+      "fulfillmentMessages": [
+        {
+          "text": [
+              ""+resM
+            ]
+        }
+      ],
       "source": "https://dr-med.herokuapp.com/"
     }
     return res.json(response);

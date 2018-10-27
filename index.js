@@ -56,7 +56,7 @@ request(selectOptions, function(error, response, body) {
   var resy = JSON.parse(body);
   var resM = resy.data.symptom[0].remedies;
   var response = {
-    "fulfillmentText":"This is a sample response from your webhook!",
+    "fulfillmentText":""+resM,
     "fulfillmentMessages": [
       {
         "text": {
@@ -110,7 +110,7 @@ app.post('/getdisease',function(req,res){
     var resy = JSON.parse(body);
     var resM = resy.data.symptom[0].remedies;
     var response = {
-      "fulfillmentText":"This is a sample response from your webhook!",
+      "fulfillmentText":""+resM,
       "fulfillmentMessages": [
         {
           "text": {

@@ -113,9 +113,11 @@ app.post('/getdisease',function(req,res){
       "fulfillmentText":"This is a sample response from your webhook!",
       "fulfillmentMessages": [
         {
-          "text": [
-              ""+resM
-            ]
+          "text": {
+            "text":  [
+                ""+resM
+              ]
+          }
         }
       ],
       "source": "https://dr-med.herokuapp.com/"

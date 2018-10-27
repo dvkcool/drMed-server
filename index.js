@@ -251,7 +251,7 @@ request(selectOptions, function(error, response, body) {
                 insert_rewards(
                   objects: [
                     {
-                      name: "${Name}",
+                      name: "${name}",
                       email: "${email}",
                       reward_points: "${points}"
                     }

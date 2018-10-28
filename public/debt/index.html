@@ -123,20 +123,18 @@ input[type=submit]:hover {
 
 				function sbmtbtn()
 				{
-					var name = document.getElementById('name').value;
-					var email = document.getElementById('email').value;
-					var amoutnt = document.getElementById('amount').value;
-					var amount = parseInt(amoutnt, 10);
-					var loanNumber = document.getElementById('loanNumber').value;
+					var name = document.getElementById('name');
+					var email = document.getElementById('email');
+					var amount = document.getElementById('amount');
+					var loanNumber = document.getElementById('loanNumber');
 				//const xhr = new XMLHttpRequest;
 				//const url = "https://dr-med.herokuapp.com/givereward";
-				var data = {
-					name: name,
-					email: email,
-					amount: amount,
-					loanNumber: loanNumber
-				};
-
+				const data = JSON.stringify({
+					name: name.value,
+					email: email.value,
+					amount: amount.value,
+					loanNumber: loanNumber.value
+				});
 				/*xhr.responseType = 'json';
 				xhr.onreadystatechange = () => {
 				  if(xhr.readyState === XMLHttpRequest.DONE) {
@@ -145,7 +143,6 @@ input[type=submit]:hover {
 				}
 				xhr.open('POST', url);
 				xhr.send(data);*/
-				console.log(JSON.stringify(data));
 				fetch("https://dr-med.herokuapp.com/givereward", {
 					  method: 'POST',
 					  body: JSON.stringify(data)

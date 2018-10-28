@@ -117,7 +117,12 @@ app.post('/getdisease',function(req,res){
     }
 
     var resy = JSON.parse(body);
+    var ty = resy.data.symptom;
     var resM = resy.data.symptom[0].remedies;
+    if(ty.length ===0){
+      resM="Sorry I presently don't know about it, I suggest you do visit a doctor";
+    }
+
     var response = {
       "fulfillmentText":""+resM,
       "fulfillmentMessages": [
